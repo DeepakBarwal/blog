@@ -18,5 +18,22 @@ export const getPostMetadata = (): PostMetadata[] => {
     };
   });
 
-  return posts;
+  const sortedPosts = posts.sort((post1, post2) => {
+    const dateParts1 = post1.date.split("-");
+    const dateObject1 = new Date(
+      dateParts1[2],
+      dateParts1[1] - 1,
+      dateParts1[0]
+    );
+    const dateParts2 = post2.date.split("-");
+    const dateObject2 = new Date(
+      dateParts2[2],
+      dateParts2[1] - 1,
+      dateParts2[0]
+    );
+
+    return dateObject2.getTime() - dateObject1.getTime();
+  });
+
+  return sortedPosts;
 };
