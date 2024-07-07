@@ -333,11 +333,13 @@ In your `server.ts` file, replace the `console.log` with `logger.info` and `cons
 ## Error handling setup
 
 1. Install `http-errors`
+   
    ```bash
    npm i http-errors
    ```
 
 2. Add the following global error handler as the last middleware in `app.ts`:
+   
    ```ts
    // eslint-disable-next-line @typescript-eslint/no-unused-vars
    app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
@@ -361,6 +363,7 @@ In your `server.ts` file, replace the `console.log` with `logger.info` and `cons
 ## Tests setup
 
 1. Run:
+   
    ```bash
    npm i -D jest ts-jest @types/jest supertest @types/supertest
 
@@ -368,6 +371,7 @@ In your `server.ts` file, replace the `console.log` with `logger.info` and `cons
    ```
 
 2. Step 1 will result in a `jest.config.js` file, rename it's extension to `.mjs` and replace it's contents with:
+   
    ```js
    /** @type {import('ts-jest').JestConfigWithTsJest} */
    export default {
@@ -377,6 +381,7 @@ In your `server.ts` file, replace the `console.log` with `logger.info` and `cons
    ```
 
 3. In your `package.json`, add another script:
+   
    ```json
    "test": "jest --watch --runInBand"
    ```
