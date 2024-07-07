@@ -1,0 +1,23 @@
+---
+title: "Microservices Architecture"
+subtitle: "Discussing Microservices Architecture"
+date: "25-06-2024"
+---
+
+## Top 3 advantages of microservices
+
+- Zero Downtime Independent Deployability: Helps with scaling each service independently to handle unequal load.
+- Reflect your team's structure: Each team can maintain only their set of service(s). CI/CD pipeline needs less resources as compared to monolith.
+- Self-contained data & logic
+
+## Top 3 disadvantages of microservices
+
+- Infrastructure complexity
+- Latency
+- Risk of failure cascades
+
+## How to distribute services?
+
+By embracing Domain Driven Design and defining bounded context(s) after event storming which is done by involving all parties (domain experts, texh, ui/ux, etc).
+
+Each context gets it's own service.
